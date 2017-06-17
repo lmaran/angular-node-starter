@@ -21,7 +21,7 @@ export class AppComponent {
       ],
       showLanguageSelector: true,
       showUserControls: true,
-      showStatusBar: true,
+      showStatusBar: false,
       showStatusBarBreakpoint: 800
     };
 
