@@ -14,6 +14,20 @@
     overflow: auto;
 }
 
+:host(.vertical-menu-off-canvas) {
+    position:absolute;
+    top:0;
+    bottom:0;
+
+
+    display: inline-block;
+    width: 200px;
+    padding-left: 4px;
+    flex-grow: 0;
+    background-color: #555;
+    overflow: auto;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

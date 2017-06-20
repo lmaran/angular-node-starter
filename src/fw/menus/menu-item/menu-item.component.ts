@@ -68,6 +68,12 @@ export class MenuItemComponent implements OnInit {
     else if (this.item.route) {
       // force horizontal menus to close by sending a mouseleave event
       let newEvent = new MouseEvent('mouseleave', {bubbles: true});
+
+        // force vertical menus to close (for small screens only)
+        if (this.menuService.isVertical) {
+            this.menuService.toggleLeftSideMenu();
+        }
+
       this.renderer.invokeElementMethod(
           this.el.nativeElement, 'dispatchEvent', [newEvent]);
 

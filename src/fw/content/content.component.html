@@ -1,8 +1,20 @@
 
-<fw-menu 
-    *ngIf="menuService.isVertical && screenService.isLarge() || menuService.showingLeftSideMenu && !screenService.isLarge()"
+<!--<fw-menu 
+    *ngIf="menuService.isVertical && screenService.isLarge()"
     class="vertical-menu">
-</fw-menu>
+</fw-menu>-->
+
+<ng-container *screenLarge>
+    <fw-menu
+        *ngIf="menuService.showingLeftSideMenu"
+        class="vertical-menu">
+    </fw-menu>
+</ng-container>
+
+<!--<fw-menu 
+    *ngIf="menuService.showingLeftSideMenu"
+    class="vertical-menu-off-canvas">
+</fw-menu>-->
 
 <div class="body-style">
     <router-outlet></router-outlet>
