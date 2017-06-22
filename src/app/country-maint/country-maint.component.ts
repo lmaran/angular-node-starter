@@ -11,14 +11,16 @@ import { Country } from '../view-models/country';
 })
 export class CountryMaintComponent {
 
-  countries : Array<Country>;
+  countries: Array<Country>;
   deleteError: string;
   deleteId: number;
   isDeleting = false;
 
   constructor(private dataService: AppDataService,
-              private router: Router) { 
-    dataService.getCountries().subscribe((data) => this.countries = data);
+              private router: Router) {
+    dataService.getCountries().subscribe((data) => {
+      this.countries = data
+    });
   }
 
   cancelDelete() {
@@ -38,7 +40,7 @@ export class CountryMaintComponent {
       );
   }
 
-  deleteCountryQuestion(id:number) {
+  deleteCountryQuestion(id: number) {
     this.deleteError = null;
     this.deleteId = id;
   }

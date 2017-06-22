@@ -13,12 +13,12 @@ export class SignInComponent {
 
   formError: string;
   submitting = false;
-  
+
   constructor(private userApi: UserApi,
-              private router:Router) { }
+              private router: Router) { }
 
   onSubmit(signInForm: NgForm) {
-    
+
     if (signInForm.valid) {
 
       console.log('submitting...', signInForm);
@@ -30,7 +30,7 @@ export class SignInComponent {
             console.log('got valid: ', data);
             this.router.navigate(['/authenticated']);
           },
-          (err)=> {
+          (err) => {
             this.submitting = false;
             console.log('got error: ', err);
             this.formError = err;

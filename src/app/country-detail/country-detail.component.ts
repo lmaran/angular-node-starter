@@ -39,7 +39,7 @@ export class CountryDetailComponent implements OnInit {
   operation: string;
 
   constructor(private route: ActivatedRoute,
-              private router: Router, 
+              private router: Router,
               private dataService: AppDataService) { }
 
   createCountry(country: Country) {
@@ -55,11 +55,12 @@ export class CountryDetailComponent implements OnInit {
     this.operation = this.route.snapshot.params['operation'];
 
     if (this.operation === 'create') {
-      this.country = { id: 0, name: "", epiIndex: null };
-    }
-    else
-      this.dataService.getCountry(this.route.snapshot.params['id'])
+      this.country = { id: 0, name: '', epiIndex: null };
+    } else {
+      const countryId = parseInt(this.route.snapshot.params['id'], 10);
+      this.dataService.getCountry(countryId)
         .subscribe((country: Country) => this.country = country);
+    }
   }
 
   updateCountry(country: Country) {

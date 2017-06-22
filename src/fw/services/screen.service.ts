@@ -16,17 +16,16 @@ export class ScreenService {
             this.screenWidth = window.innerWidth;
             this.screenHeight = window.innerHeight;
             window.addEventListener('resize', (event) => this.onResize(event));
-        }
-        catch (e) {
+        } catch (e) {
             // we're going with default screen dimensions
         }
     }
 
-    isLarge() : boolean {
+    isLarge(): boolean {
         return this.screenWidth >= this.largeBreakpoint;
     }
 
-    onResize($event) : void {
+    onResize($event): void {
         this.screenWidth = window.innerWidth;
         this.screenHeight = window.innerHeight;
         this.resizeSource.next();

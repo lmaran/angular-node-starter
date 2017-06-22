@@ -10,8 +10,8 @@ import { FrameworkConfigService } from './services/framework-config.service';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { ScreenService } from './services/screen.service';
-import { ScreenLarge } from './directives/screen-large.directive';
-import { ScreenBelowLarge } from './directives/screen-below-large.directive';
+import { ScreenLargeDirective } from './directives/screen-large.directive';
+import { ScreenBelowLargeDirective } from './directives/screen-below-large.directive';
 import { MenuService } from './services/menu.service';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
@@ -37,8 +37,8 @@ import { PanelComponent } from './panels/panel/panel.component';
     TitleBarComponent,
     TopBarComponent,
     StatusBarComponent,
-    ScreenLarge,
-    ScreenBelowLarge,
+    ScreenLargeDirective,
+    ScreenBelowLargeDirective,
     MenuComponent,
     MenuItemComponent,
     PopupMenuComponent,
@@ -58,8 +58,8 @@ import { PanelComponent } from './panels/panel/panel.component';
     FrameworkBodyComponent,
     DynamicFormComponent,
     PanelComponent,
-    ScreenLarge,
-    ScreenBelowLarge
+    ScreenLargeDirective,
+    ScreenBelowLargeDirective
   ]
 })
 export class FwModule { }

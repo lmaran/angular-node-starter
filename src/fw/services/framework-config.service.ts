@@ -16,8 +16,6 @@ export interface FrameworkConfigSettings {
 
 @Injectable()
 export class FrameworkConfigService {
-  
-  constructor() { }
 
   showLanguageSelector = true;
   showUserControls = true;
@@ -25,7 +23,9 @@ export class FrameworkConfigService {
   showStatusBarBreakpoint = 0;
   socialIcons = new Array<IconFiles>();
 
-  configure(settings: FrameworkConfigSettings) : void {
+  constructor() { }
+
+  configure(settings: FrameworkConfigSettings): void {
       Object.assign(this, settings);
   }
 

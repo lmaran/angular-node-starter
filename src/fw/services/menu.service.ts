@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subscription } from 'rxjs';
+import {Subscription } from 'rxjs/Subscription';
 
 import { ScreenService } from './screen.service';
 
@@ -23,7 +23,7 @@ export class MenuService {
     this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
   }
 
-  toggleLeftSideMenu() : void {
+  toggleLeftSideMenu(): void {
     this.isVertical = true;
     this.showingLeftSideMenu = !this.showingLeftSideMenu;
   }
@@ -36,8 +36,8 @@ export class MenuService {
     // trigger the setter
     // this.screenLarge = false;
 
-    let condition = this.screenService.screenWidth >= this.screenService.largeBreakpoint;
-    
+    const condition = this.screenService.screenWidth >= this.screenService.largeBreakpoint;
+
     if (condition && !this.hasView) {
       this.hasView = true;
       this.showingLeftSideMenu = true;
@@ -48,5 +48,5 @@ export class MenuService {
     }
 
   }
-  
+
 }

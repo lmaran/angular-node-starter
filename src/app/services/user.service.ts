@@ -15,7 +15,7 @@ export class UserService implements UserApi {
     console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
     this.isAuthenticated = true;
 
-    //return Observable.of({});
+    // return Observable.of({});
     return Observable.of({}).delay(2000); // just for test
     // simulate an error
     // return Observable.of({}).delay(2000).flatMap(x=>Observable.throw('Invalid User Name and/or Password'));

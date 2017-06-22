@@ -11,7 +11,7 @@ import { SignInComponent } from '../fw/users/sign-in/sign-in.component';
 import { RegisterUserComponent } from '../fw/users/register-user/register-user.component';
 import { AuthGuard } from './services/auth-guard.service';
 
-export const appRoutes: Routes = [  
+export const appRoutes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'register', component: RegisterUserComponent },
   { path: 'authenticated', component: AuthenticatedUserComponent, canActivate: [AuthGuard], children: [
@@ -19,7 +19,7 @@ export const appRoutes: Routes = [
           { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
           { path: 'dashboard', component: DashboardComponent },
           { path: 'country-list/:count', component: CountryListComponent },
-          //{ path: 'country-detail/:id', component: CountryDetailComponent },
+          // { path: 'country-detail/:id', component: CountryDetailComponent },
           { path: 'country-detail/:id/:operation', component: CountryDetailComponent },
           { path: 'country-maint', component: CountryMaintComponent },
           { path: 'settings', component: SettingsComponent },

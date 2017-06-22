@@ -1,4 +1,4 @@
-<div *screenLarge class="group">
+<div *fwScreenLarge class="group">
   <div class="index">
     <span>{{ index }}</span>
   </div>
@@ -12,7 +12,7 @@
     <span>{{ country.epiIndex }}</span>
   </div>
 </div>
-<div *screenBelowLarge class="group-small">
+<div *fwScreenBelowLarge class="group-small">
   <div class="title-group-small">
     <div class="index-small">
       <span>{{ index }}</span>
@@ -24,7 +24,7 @@
   <div>
     <img class="country-image-small" [src]="'/assets/' + country.name + '.jpg'" [alt]="country.name">
   </div>
-  
+
   <div class="epi-index-small">
     <span>{{ country.epiIndex }}</span>
   </div>
