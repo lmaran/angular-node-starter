@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { FrameworkConfigService, FrameworkConfigSettings } from '../fw/services/framework-config.service';
-import { MenuService } from '../fw/services/menu.service';
+import { FrameworkConfigService, FrameworkConfigSettings } from '../fw/framework-config.service';
+import { MenuService } from '../fw/menus/menu.service';
 import { initialMenuItems } from './app.menu';
 
 @Component({

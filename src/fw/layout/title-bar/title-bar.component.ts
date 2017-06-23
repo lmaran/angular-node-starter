@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // we don't need ScreenService if 'fwScreenLarge' directive is used
 // import { ScreenService } from '../services/screen.service';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../../menus/menu.service';
 
 @Component({
   selector: 'fw-title-bar',
@@ -12,7 +12,7 @@ export class TitleBarComponent implements OnInit {
 
   constructor(
     // private screenService: ScreenService
-    private menuService: MenuService) { }
+    public menuService: MenuService) { }
 
   ngOnInit() {
   }

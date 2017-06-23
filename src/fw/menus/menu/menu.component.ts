@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuService } from '../../services/menu.service';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'fw-menu',

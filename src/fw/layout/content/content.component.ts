@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuService } from '../services/menu.service';
-import { ScreenService } from '../services/screen.service';
+import { MenuService } from '../../menus/menu.service';
+import { ScreenService } from '../screen.service';
 
 @Component({
   selector: 'fw-content',

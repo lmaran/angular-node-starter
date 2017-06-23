@@ -3,7 +3,7 @@ import { Component, ElementRef, HostBinding, HostListener,
 import { trigger, style, transition, animate } from '@angular/animations';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { MenuItem, MenuService } from '../../services/menu.service';
+import { MenuItem, MenuService } from '../menu.service';
 
 @Component({
   selector: 'fw-menu-item',

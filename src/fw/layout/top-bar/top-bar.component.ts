@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FrameworkConfigService } from '../services/framework-config.service';
-import { UserApi } from '../users/user-api';
+import { FrameworkConfigService } from '../../framework-config.service';
+import { UserApi } from '../../users/user-api';
 
 @Component({
   selector: 'fw-top-bar',
