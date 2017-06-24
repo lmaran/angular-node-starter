@@ -31,21 +31,16 @@ export class MenuService {
     }
 
     onResize() {
-        // trigger the setter
-        // this.screenLarge = false;
-
         const condition = this.screenService.screenWidth >= this.screenService.largeBreakpoint;
 
-        if (condition && !this.hasView) {
+        if (condition && !this.hasView) { // large screen
             this.hasView = true;
             this.leftSideMenuIsVisible = true;
             this.leftSideMenuIsOffCanvas = false;
-
-            // console.log("is large screen");
-        } else if (!condition && this.hasView) {
+        } else if (!condition && this.hasView) { // small screen
             this.hasView = false;
+            this.leftSideMenuIsVisible = false;
             this.leftSideMenuIsOffCanvas = true;
-            // console.log("is small screen");
         }
 
     }
