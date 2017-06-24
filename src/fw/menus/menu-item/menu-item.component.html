@@ -1,20 +1,11 @@
-<div class="menu-item"
-     [ngClass]="{'router-link-active': isActiveRoute }">
+<div class="menu-item" [ngClass]="{'router-link-active': isActiveRoute }">
 
-  <span class="glyphicon {{ item.icon }}"></span>
-  <span>{{ item.text.toUpperCase() }}</span>
+	<span class="glyphicon {{ item.icon }}"></span>
+	<span>{{ item.text.toUpperCase() }}</span>
 
-  <span *ngIf="item.submenu && !(showingSubmenu)" 
-        class="glyphicon glyphicon-menu-left"></span> 
-  <span *ngIf="item.submenu && (showingSubmenu)" 
-        class="glyphicon glyphicon-menu-down"></span> 
+	<span *ngIf="item.submenu && !(showingSubmenu)" class="glyphicon glyphicon-menu-left"></span>
+	<span *ngIf="item.submenu && (showingSubmenu)" class="glyphicon glyphicon-menu-down"></span>
 
 </div>
-<fw-submenu
-    *ngIf="showingSubmenu" 
-    [menu]='item.submenu'
-
-    [style.left.px]="submenuLeft"
-    [style.top.px]="submenuTop"
-    @visibilityChanged>
+<fw-submenu *ngIf="showingSubmenu" [menu]='item.submenu' [style.left.px]="submenuLeft" [style.top.px]="submenuTop" @visibilityChanged>
 </fw-submenu>

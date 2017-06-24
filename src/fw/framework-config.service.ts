@@ -17,16 +17,16 @@ export interface FrameworkConfigSettings {
 @Injectable()
 export class FrameworkConfigService {
 
-  showLanguageSelector = true;
-  showUserControls = true;
-  showStatusBar = true;
-  showStatusBarBreakpoint = 0;
-  socialIcons = new Array<IconFiles>();
+    showLanguageSelector = true;
+    showUserControls = true;
+    showStatusBar = true;
+    showStatusBarBreakpoint = 0;
+    socialIcons = new Array<IconFiles>();
 
-  constructor() { }
+    constructor() { }
 
-  configure(settings: FrameworkConfigSettings): void {
-      Object.assign(this, settings);
-  }
+    configure(settings: FrameworkConfigSettings): void {
+        Object.assign(this, settings);
+    }
 
 }

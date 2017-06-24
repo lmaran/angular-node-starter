@@ -24,42 +24,42 @@ import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-fie
 import { PanelComponent } from './layout/panels/panel/panel.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  declarations: [
-    FrameworkBodyComponent,
-    ContentComponent,
-    TitleBarComponent,
-    TopBarComponent,
-    StatusBarComponent,
-    ScreenLargeDirective,
-    ScreenBelowLargeDirective,
-    MenuComponent,
-    MenuItemComponent,
-    SubmenuComponent,
-    SignInComponent,
-    RegisterUserComponent,
-    DynamicFormComponent,
-    DynamicFieldComponent,
-    PanelComponent
+    imports: [
+        CommonModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    declarations: [
+        FrameworkBodyComponent,
+        ContentComponent,
+        TitleBarComponent,
+        TopBarComponent,
+        StatusBarComponent,
+        ScreenLargeDirective,
+        ScreenBelowLargeDirective,
+        MenuComponent,
+        MenuItemComponent,
+        SubmenuComponent,
+        SignInComponent,
+        RegisterUserComponent,
+        DynamicFormComponent,
+        DynamicFieldComponent,
+        PanelComponent
 
-  ],
-  providers: [
-    FrameworkConfigService,
-    ScreenService,
-    MenuService
-  ],
-  exports: [
-    FrameworkBodyComponent,
-    DynamicFormComponent,
-    PanelComponent,
-    ScreenLargeDirective,
-    ScreenBelowLargeDirective
-  ]
+    ],
+    providers: [
+        FrameworkConfigService,
+        ScreenService,
+        MenuService
+    ],
+    exports: [
+        FrameworkBodyComponent,
+        DynamicFormComponent,
+        PanelComponent,
+        ScreenLargeDirective,
+        ScreenBelowLargeDirective
+    ]
 })
 export class FwModule { }

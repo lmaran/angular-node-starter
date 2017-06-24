@@ -1,9 +1,8 @@
 <nav>
-  <ul>
-    <li *ngFor="let item of menuService.items">
-      <fw-menu-item [item]="item"
-                    [parentIsSubmenu]="false">
-      </fw-menu-item>
-    </li>
-  </ul>
+	<ul>
+		<li *ngFor="let item of menuService.items">
+			<fw-menu-item [item]="item" [parentIsSubmenu]="false">
+			</fw-menu-item>
+		</li>
+	</ul>
 </nav>

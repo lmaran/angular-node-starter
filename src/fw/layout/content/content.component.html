@@ -1,6 +1,6 @@
 <fw-menu
-    *ngIf="menuService.showingLeftSideMenu"
-    [class.off-canvas]="!screenService.isLarge()">
+    *ngIf="menuService.leftSideMenuIsVisible"
+    [class.off-canvas]="menuService.leftSideMenuIsOffCanvas">
 </fw-menu>
 
 <div class="body-style">

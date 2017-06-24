@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Subscription';
 
 import { ScreenService } from '../layout/screen.service';
 
@@ -13,35 +13,41 @@ export interface MenuItem {
 @Injectable()
 export class MenuService {
 
-  items: Array<MenuItem>;
-  showingLeftSideMenu = false;
-  private screenSubscription: Subscription;
-  private hasView = false;
+    items: Array<MenuItem>;
+    leftSideMenuIsVisible = false;
+    leftSideMenuIsOffCanvas = false;
 
-  constructor(private screenService: ScreenService) {
-    this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
-    if(screenService.isLarge()) { this.showingLeftSideMenu = true; }
-  }
+    private screenSubscription: Subscription;
+    private hasView = false;
 
-  toggleLeftSideMenu(): void {
-    this.showingLeftSideMenu = !this.showingLeftSideMenu;
-  }
-
-  onResize() {
-    // trigger the setter
-    // this.screenLarge = false;
-
-    const condition = this.screenService.screenWidth >= this.screenService.largeBreakpoint;
-
-    if (condition && !this.hasView) {
-      this.hasView = true;
-      this.showingLeftSideMenu = true;
-      // console.log("is large screen");
-    } else if (!condition && this.hasView) {
-      this.hasView = false;
-      // console.log("is small screen");
+    constructor(private screenService: ScreenService) {
+        this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
+        if (screenService.isLarge()) { this.leftSideMenuIsVisible = true; }
     }
 
-  }
+    toggleLeftSideMenu(): void {
+        this.leftSideMenuIsVisible = !this.leftSideMenuIsVisible;
+        this.leftSideMenuIsOffCanvas = this.screenService.screenWidth < this.screenService.largeBreakpoint;
+    }
+
+    onResize() {
+        // trigger the setter
+        // this.screenLarge = false;
+
+        const condition = this.screenService.screenWidth >= this.screenService.largeBreakpoint;
+
+        if (condition && !this.hasView) {
+            this.hasView = true;
+            this.leftSideMenuIsVisible = true;
+            this.leftSideMenuIsOffCanvas = false;
+
+            // console.log("is large screen");
+        } else if (!condition && this.hasView) {
+            this.hasView = false;
+            this.leftSideMenuIsOffCanvas = true;
+            // console.log("is small screen");
+        }
+
+    }
 
 }

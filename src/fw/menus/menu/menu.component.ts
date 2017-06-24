@@ -3,15 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
 
 @Component({
-  selector: 'fw-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+    selector: 'fw-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public menuService: MenuService) { }
+    constructor(public menuService: MenuService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
