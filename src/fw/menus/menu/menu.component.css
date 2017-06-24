@@ -1,11 +1,4 @@
 :host {
-    display: flex; 
-    align-items: flex-end; 
-    justify-content: flex-end;
-    flex-grow: 1;
-}
-
-:host(.vertical-menu) {
     display: inline-block;
     width: 200px;
     padding-left: 4px;
@@ -14,7 +7,7 @@
     overflow: auto;
 }
 
-:host(.vertical-menu-off-canvas) {
+:host(.off-canvas) {
     position:absolute;
     top:0;
     bottom:0;
@@ -36,12 +29,4 @@ ul {
 
 li {
     display: inline;
-}
-
-button {
-    margin-top: 20px;
-}
-button.horizontal {
-    margin-left: 20px;
-    margin-bottom: 2px;
 }

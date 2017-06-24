@@ -14,22 +14,17 @@ export interface MenuItem {
 export class MenuService {
 
   items: Array<MenuItem>;
-  isVertical = true;
   showingLeftSideMenu = false;
   private screenSubscription: Subscription;
   private hasView = false;
 
   constructor(private screenService: ScreenService) {
     this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
+    if(screenService.isLarge()) { this.showingLeftSideMenu = true; }
   }
 
   toggleLeftSideMenu(): void {
-    this.isVertical = true;
     this.showingLeftSideMenu = !this.showingLeftSideMenu;
-  }
-
-  toggleMenuOrientation() {
-    this.isVertical = !this.isVertical;
   }
 
   onResize() {

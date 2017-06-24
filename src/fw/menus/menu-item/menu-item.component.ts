@@ -28,7 +28,7 @@ export class MenuItemComponent implements OnInit {
   isActiveRoute = false;
 
   mouseInItem = false;
-  mouseInPopup = false;
+  mouseInPopup = true;
   popupLeft = 0;
   popupTop = 34;
 
@@ -61,17 +61,13 @@ export class MenuItemComponent implements OnInit {
     event.stopPropagation();
 
     if (this.item.submenu) {
-      if (this.menuService.isVertical) {
-          this.mouseInPopup = !this.mouseInPopup;
-      }
+        this.mouseInPopup = !this.mouseInPopup;
     } else if (this.item.route) {
       // force horizontal menus to close by sending a mouseleave event
       const newEvent = new MouseEvent('mouseleave', {bubbles: true});
 
         // force vertical menus to close (for small screens only)
-        if (this.menuService.isVertical) {
-            this.menuService.toggleLeftSideMenu();
-        }
+        this.menuService.toggleLeftSideMenu();
 
       this.renderer.invokeElementMethod(
           this.el.nativeElement, 'dispatchEvent', [newEvent]);
@@ -80,35 +76,7 @@ export class MenuItemComponent implements OnInit {
     }
   }
 
-  onPopupMouseEnter(event): void {
-      if (!this.menuService.isVertical) {
-          this.mouseInPopup = true;
-      }
-  }
 
-  onPopupMouseLeave(event): void {
-      if (!this.menuService.isVertical) {
-          this.mouseInPopup = false;
-      }
-  }
 
-  @HostListener('mouseleave', ['$event'])
-  onMouseLeave(event): void {
-      if (!this.menuService.isVertical) {
-          this.mouseInItem = false;
-      }
-  }
 
-  @HostListener('mouseenter')
-  onMouseEnter(): void {
-      if (!this.menuService.isVertical) {
-          if (this.item.submenu) {
-              this.mouseInItem = true;
-              if (this.parentIsPopup) {
-                  this.popupLeft = 160;
-                  this.popupTop = 0;
-              }
-          }
-      }
-  }
 }
