@@ -15,7 +15,7 @@ import { ScreenBelowLargeDirective } from './layout/screen-below-large.directive
 import { MenuService } from './menus/menu.service';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
-import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
+import { SubmenuComponent } from './menus/submenu/submenu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInComponent } from './users/sign-in/sign-in.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
@@ -41,7 +41,7 @@ import { PanelComponent } from './layout/panels/panel/panel.component';
     ScreenBelowLargeDirective,
     MenuComponent,
     MenuItemComponent,
-    PopupMenuComponent,
+    SubmenuComponent,
     SignInComponent,
     RegisterUserComponent,
     DynamicFormComponent,

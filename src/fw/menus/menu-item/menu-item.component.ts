@@ -23,14 +23,13 @@ import { MenuItem, MenuService } from '../menu.service';
 })
 export class MenuItemComponent implements OnInit {
   @Input() item = <MenuItem>null;  // see angular-cli issue #2034
-  @HostBinding('class.parent-is-popup')
-  @Input() parentIsPopup = true;
+  @HostBinding('class.parent-is-submenu')
+  @Input() parentIsSubmenu = true;
   isActiveRoute = false;
 
-  mouseInItem = false;
-  mouseInPopup = true;
-  popupLeft = 0;
-  popupTop = 34;
+  showingSubmenu = true;
+  submenuLeft = 0;
+  submenuTop = 34;
 
   constructor(private router: Router,
               public menuService: MenuService,
@@ -61,7 +60,7 @@ export class MenuItemComponent implements OnInit {
     event.stopPropagation();
 
     if (this.item.submenu) {
-        this.mouseInPopup = !this.mouseInPopup;
+        this.showingSubmenu = !this.showingSubmenu;
     } else if (this.item.route) {
       // force horizontal menus to close by sending a mouseleave event
       const newEvent = new MouseEvent('mouseleave', {bubbles: true});

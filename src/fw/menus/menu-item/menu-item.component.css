@@ -6,12 +6,12 @@
     color: white;
 }
 
-:host:not(.parent-is-popup) {
+:host:not(.parent-is-submenu) {
     margin-left: 16px;
     width: auto;
 }
 
-:host(.in-popup) {
+:host(.in-submenu) {
     padding-left: 16px;
 }
 
