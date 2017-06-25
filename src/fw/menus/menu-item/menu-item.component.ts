@@ -25,8 +25,6 @@ import { MenuItem, MenuService } from '../menu.service';
 })
 export class MenuItemComponent implements OnInit {
     @Input() item = <MenuItem>null;  // see angular-cli issue #2034
-    @HostBinding('class.parent-is-submenu')
-    @Input() parentIsSubmenu = true;
     isActiveRoute = false;
 
     showingSubmenu = true;
