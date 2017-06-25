@@ -26,7 +26,7 @@ export let initialMenuItems: Array<MenuItem> = [
                     {
                         text: 'India',
                         icon: 'glyphicon-flag',
-                        route: '/authenticated/country-detail/India',
+                        route: '/authenticated/country-list/5',
                         submenu: null
                     },
                     {

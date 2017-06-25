@@ -41,7 +41,29 @@ export class MenuItemComponent implements OnInit {
         this.isActiveRoute = (route === this.item.route);
     }
 
+    // check if this menuItem has a submenu with an active element
+    hasAChildWithActiveRoute(item: MenuItem): boolean {
+        if (!item.submenu) { return false; }
+
+        const submenuLength = item.submenu.length;
+
+        for (let i = 0; i < submenuLength; i++) {
+            let nextItem = item.submenu[i];
+            if (nextItem.route === this.router.url) { return true; }
+
+            // if not found, go deeper (recursively)
+            if (this.hasAChildWithActiveRoute(nextItem)) { return true; }
+        };
+
+        return false;
+    }
+
+
     ngOnInit(): void {
+
+        // open appropriate menu item on page reload
+        this.showingSubmenu = this.hasAChildWithActiveRoute(this.item);
+
         this.checkActiveRoute(this.router.url);
         this.router.events
             .subscribe((event) => {
