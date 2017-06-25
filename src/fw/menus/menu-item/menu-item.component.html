@@ -7,5 +7,5 @@
 	<span *ngIf="item.submenu && (showingSubmenu)" class="glyphicon glyphicon-menu-down"></span>
 
 </div>
-<fw-submenu *ngIf="showingSubmenu" [menu]='item.submenu' [style.left.px]="submenuLeft" [style.top.px]="submenuTop" @visibilityChanged>
+<fw-submenu [class.is-hidden]="!showingSubmenu" [menu]='item.submenu' [style.left.px]="submenuLeft" [style.top.px]="submenuTop" @visibilityChanged>
 </fw-submenu>
