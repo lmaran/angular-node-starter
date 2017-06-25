@@ -7,13 +7,15 @@
     overflow: auto;
 }
 
+:host(.is-hidden) {
+    display:none;
+}
+
 :host(.off-canvas) {
     position:absolute;
     top:0;
     bottom:0;
 
-
-    display: inline-block;
     width: 200px;
     padding-left: 4px;
     flex-grow: 0;

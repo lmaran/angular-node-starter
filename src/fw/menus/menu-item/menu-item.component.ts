@@ -43,7 +43,7 @@ export class MenuItemComponent implements OnInit {
 
     ngOnInit(): void {
         this.checkActiveRoute(this.router.url);
-
+        // console.log(123);
         this.router.events
             .subscribe((event) => {
                 if (event instanceof NavigationEnd) {

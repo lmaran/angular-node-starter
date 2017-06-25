@@ -1,5 +1,5 @@
 <fw-menu
-    *ngIf="menuService.leftSideMenuIsVisible"
+    [class.is-hidden]="!menuService.leftSideMenuIsVisible"
     [class.off-canvas]="menuService.leftSideMenuIsOffCanvas">
 </fw-menu>
 
