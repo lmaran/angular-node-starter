@@ -1,6 +1,6 @@
 :host {
     display: flex;
-    background-color: #f0fff0; 
+    _ackground-color: #f0fff0; 
     flex-grow: 1;
     position: relative; /* set it as a relative position for the off-canvas left side menu */
 }

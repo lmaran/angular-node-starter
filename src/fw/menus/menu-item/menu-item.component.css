@@ -30,9 +30,9 @@ span {
 }
 
 .menu-item:hover {
-    background-color: green;
+    background-color: #878c87;
 }
 
 .router-link-active {
-    background-color: green;
+    background-color: #878c87;
 }

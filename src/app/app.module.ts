@@ -19,6 +19,9 @@ import { AuthGuard } from './services/auth-guard.service';
 import { AppDataService } from './services/app-data.service';
 import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
 import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
+import { Link1Component } from './link1/link1.component';
+import { Link2Component } from './link2/link2.component';
+import { Link3Component } from './link3/link3.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ImagePanelComponent } from './panels/image-panel/image-panel.component'
     CountryMaintComponent,
     AuthenticatedUserComponent,
     CountryPanelComponent,
-    ImagePanelComponent
+    ImagePanelComponent,
+    Link1Component,
+    Link2Component,
+    Link3Component
   ],
   imports: [
     BrowserModule,
