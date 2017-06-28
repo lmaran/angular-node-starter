@@ -48,7 +48,7 @@ export class MenuItemComponent implements OnInit {
         const submenuLength = item.submenu.length;
 
         for (let i = 0; i < submenuLength; i++) {
-            let nextItem = item.submenu[i];
+            const nextItem = item.submenu[i];
             if (nextItem.route === this.router.url) { return true; }
 
             // if not found, go deeper (recursively)

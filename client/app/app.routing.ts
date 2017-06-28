@@ -34,7 +34,7 @@ import { Link3Component } from './link3/link3.component';
 
 export const appRoutes: Routes = [
     { path: 'signin', component: SignInComponent },
-    { path: 'register', component: RegisterUserComponent },    
+    { path: 'register', component: RegisterUserComponent },
     {
         path: 'authenticated', component: AuthenticatedUserComponent, canActivate: [AuthGuard], children: [
             {
