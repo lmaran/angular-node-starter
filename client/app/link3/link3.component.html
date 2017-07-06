@@ -1,3 +1,9 @@
-<p>
-  link3 works!
-</p>
+ link3 works!
+
+<h2>Basic External Request</h2>
+<button type="button" (click)="makeRequest()">Make Request</button>
+<div *ngIf="loading">loading...</div>
+<pre>{{data | json}}</pre>
+
+<h2>MongoDB data from http://localhost:1410/api/user</h2>
+<pre>{{apiData | json}}</pre>
