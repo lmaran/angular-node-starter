@@ -10,7 +10,12 @@ npm start
 
 ```bash
 npm build
-# App url: http://localhost:1410:
+
+# from dev (http://localhost:1410):
+NODE_ENV=staging PORT=1410 node dist/server/app.js
+
+# from stg/prod:
+NODE_ENV=staging PORT=1410 node server/app.js
 ```
 
 

@@ -31,6 +31,9 @@ let initialize = function(app){
     // app.set("view engine", ".hbs");
 
     if (config.env === "production" || config.env === "staging") {
+        // in production mode run application from dist folder
+        app.use(express.static(path.join(__dirname, "/../client")));
+
         // app.use(favicon(path.join(config.root, "client", "favicon.ico")));
 
         // app.use(express.static(path.join(config.root, "client"), { index: "_" }));
