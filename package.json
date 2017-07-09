@@ -11,7 +11,7 @@
 		"_watch:server": "tsc -p ./server && node browserReloadHack.js && node dist/server/app.js",
 
 		"build": "npm run _build:server & npm run _build:client",
-		"_build:client": "ng build",
+		"_build:client": "ng build --prod --output-path=dist/client",
 		"_build:server": "tsc -p ./server",
 
 		"start-1": "run-p \"_start:client\" \"_start:server\"",
