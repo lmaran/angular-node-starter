@@ -4,8 +4,28 @@
 	"license": "MIT",
 	"scripts": {
 		"ng": "ng",
-		"start": "ng serve --proxy-config proxy.conf.json",
-		"build": "ng build",
+
+		"start": "npm run _start:server & npm run _start:client",
+		"_start:client": "ng serve --proxy-config proxy.conf.json",
+		"_start:server": "nodemon -e ts --exec \"npm run _watch:server\"",
+		"_watch:server": "tsc -p ./server && node browserReloadHack.js && node dist/server/app.js",
+
+		"build": "npm run _build:server & npm run _build:client",
+		"_build:client": "ng build",
+		"_build:server": "tsc -p ./server",
+
+		"start-1": "run-p \"_start:client\" \"_start:server\"",
+		"start0": "run-p \"_start:client\" \"_start:server\"",
+		"start2": "concurrently --kill-others \"npm run _start:server\" \"npm run _start:client\"",
+		"_start:server2": "tsc -p ./server && concurrently --kill-others \"npm run _nodemon\" \"npm run _tsc\"",
+		"_start:server3": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/app.js\" ",
+		"_start:server4": "tsc -p ./server && run-p \"_tsc\" \"_nodemon\" ",
+		"_start:server0": "run-s \"_tsc\" \"_tsc-nodemon\" ",
+		"_tsc-nodemon": "run-p \"_tsc\" \"_nodemon\" ",
+		"_nodemon": "nodemon dist/server/app.js",
+		"_tsc": "tsc -w -p ./server",		
+
+		"build2": "ng build",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e"
@@ -36,6 +56,8 @@
 		"@types/jasminewd2": "~2.0.2",
 		"@types/node": "^6.0.60",
 		"codelyzer": "^3.0.1",
+		"concurrently": "^3.5.0",
+		"connect-livereload": "^0.6.0",
 		"jasmine-core": "~2.6.2",
 		"jasmine-spec-reporter": "~4.1.0",
 		"karma": "~1.7.0",
@@ -44,9 +66,12 @@
 		"karma-coverage-istanbul-reporter": "^1.2.1",
 		"karma-jasmine": "~1.1.0",
 		"karma-jasmine-html-reporter": "^0.2.2",
+		"nodemon": "^1.11.0",
+		"npm-run-all": "^4.0.2",
 		"protractor": "~5.1.2",
 		"ts-node": "~3.0.4",
 		"tslint": "~5.3.2",
-		"typescript": "~2.3.3"
+		"typescript": "~2.3.3",
+		"write": "^0.3.3"
 	}
 }
