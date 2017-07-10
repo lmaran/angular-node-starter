@@ -3,18 +3,17 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"scripts": {
-		"start": "npm run _clean && npm run _start:all",
-		"_start:all": "run-p \"_start:server\" \"_start:client\"",
-		"_start:server": "nodemon -e ts --exec \"npm run _watch:server\"",
-		"_watch:server2": "tsc -p ./server && node browserReloadHack.js && node dist/server/app.js",
-		"_watch:server": "tsc -p ./server && npm run _reload && node dist/server/app.js",
-		"_start:client": "ng serve --proxy-config proxy.conf.json",
-		"build": "npm run _clean && npm run _build:all",
-		"_build:all": "run-p \"_build:server\" \"_build:client\"",
-		"_build:server": "tsc -p ./server",
-		"_build:client": "ng build --prod --output-path=dist/client",
-		"_clean": "rimraf dist",
-		"_reload":"echo hack for livereload > client/assets/browserReloadHack.txt",
+		"start": "npm run clean && npm run start:all",
+		"start:all": "run-p \"start:server\" \"start:client\"",
+		"start:server": "nodemon -e ts --exec \"npm run watch:server\"",
+		"watch:server": "tsc -p ./server && npm run reload && node dist/server/app.js",
+		"start:client": "ng serve --proxy-config proxy.conf.json",
+		"build": "npm run clean && npm run build:all",
+		"build:all": "run-p \"build:server\" \"build:client\"",
+		"build:server": "tsc -p ./server",
+		"build:client": "ng build --prod --output-path=dist/client",
+		"clean": "rimraf dist",
+		"reload": "echo \"This content is added automatically in order to trigger a browser reload.\" > client/_browserReloadHack.txt",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e"
@@ -59,7 +58,6 @@
 		"rimraf": "^2.6.1",
 		"ts-node": "~3.0.4",
 		"tslint": "~5.3.2",
-		"typescript": "~2.3.3",
-		"write": "^0.3.3"
+		"typescript": "~2.3.3"
 	}
 }
