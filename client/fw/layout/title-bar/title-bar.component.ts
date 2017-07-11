@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { MenuService } from '../../menus/menu.service';
+import { MenuService } from "../../menus/menu.service";
 
 @Component({
-    selector: 'fw-title-bar',
-    templateUrl: './title-bar.component.html',
-    styleUrls: ['./title-bar.component.css']
+    selector: "fw-title-bar",
+    templateUrl: "./title-bar.component.html",
+    styleUrls: ["./title-bar.component.css"]
 })
 export class TitleBarComponent implements OnInit {
 

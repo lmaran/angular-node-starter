@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
-import { MenuItem, MenuService } from '../menu.service';
+import { MenuItem, MenuService } from "../menu.service";
 
 @Component({
-    selector: 'fw-submenu',
-    templateUrl: './submenu.component.html',
-    styleUrls: ['./submenu.component.css']
+    selector: "fw-submenu",
+    templateUrl: "./submenu.component.html",
+    styleUrls: ["./submenu.component.css"]
 })
 export class SubmenuComponent implements OnInit {
 

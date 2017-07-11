@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Injectable } from "@angular/core";
+import { Subscription } from "rxjs/Subscription";
 
-import { ScreenService } from '../layout/screen.service';
+import { ScreenService } from "../layout/screen.service";
 
 export interface MenuItem {
     text: string,

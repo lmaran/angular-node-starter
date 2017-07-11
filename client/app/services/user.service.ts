@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { Observable } from 'rxjs/Rx';
-import { UserApi } from '../../fw/users/user-api';
+import { Observable } from "rxjs/Rx";
+import { UserApi } from "../../fw/users/user-api";
 
 @Injectable()
 export class UserService implements UserApi {
@@ -12,7 +12,7 @@ export class UserService implements UserApi {
   constructor(private router: Router) { }
 
   signIn(username: string, password: string, rememberMe: boolean): Observable<any> {
-    console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
+    console.log("UserService.signIn: " + username + " " + password + " " + rememberMe);
     this.isAuthenticated = true;
 
     // return Observable.of({});
@@ -23,7 +23,7 @@ export class UserService implements UserApi {
 
   signOut(): Observable<any> {
       this.isAuthenticated = false;
-      this.router.navigate(['/signin']);
+      this.router.navigate(["/signin"]);
       return Observable.of({});
   }
 

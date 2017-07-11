@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { FrameworkConfigService, FrameworkConfigSettings } from '../fw/framework-config.service';
-import { MenuService } from '../fw/menus/menu.service';
-import { initialMenuItems } from './app.menu';
+import { FrameworkConfigService, FrameworkConfigSettings } from "../fw/framework-config.service";
+import { MenuService } from "../fw/menus/menu.service";
+import { initialMenuItems } from "./app.menu";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
 
@@ -15,9 +15,9 @@ export class AppComponent {
               private menuService: MenuService) {
     const config: FrameworkConfigSettings = {
       socialIcons: [
-        { imageFile: 'assets/social-fb-bw.png', alt: 'Facebook', link: 'http://www.facebook.com'},
-        { imageFile: 'assets/social-google-bw.png', alt: 'Google +', link: 'http://www.google.com' },
-        { imageFile: 'assets/social-twitter-bw.png', alt: 'Twitter', link: 'http://www.twitter.com' }
+        { imageFile: "assets/social-fb-bw.png", alt: "Facebook", link: "http://www.facebook.com"},
+        { imageFile: "assets/social-google-bw.png", alt: "Google +", link: "http://www.google.com" },
+        { imageFile: "assets/social-twitter-bw.png", alt: "Twitter", link: "http://www.twitter.com" }
       ],
       showLanguageSelector: true,
       showUserControls: true,

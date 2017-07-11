@@ -1,4 +1,4 @@
-import { MenuItem } from '../fw/menus/menu.service';
+import { MenuItem } from "../fw/menus/menu.service";
 
 // export let initialMenuItems: Array<MenuItem> = [
 //     {
@@ -80,21 +80,21 @@ import { MenuItem } from '../fw/menus/menu.service';
 
 export let initialMenuItems: Array<MenuItem> = [
     {
-        text: 'Link1',
-        icon: 'glyphicon-dashboard',
-        route: '/authenticated/link1',
+        text: "Link1",
+        icon: "glyphicon-dashboard",
+        route: "/authenticated/link1",
         submenu: null
     },
     {
-        text: 'Link2',
-        icon: 'glyphicon-flag',
-        route: '/authenticated/link2',
+        text: "Link2",
+        icon: "glyphicon-flag",
+        route: "/authenticated/link2",
         submenu: null
     },
     {
-        text: 'Link3',
-        icon: 'glyphicon-wrench',
-        route: '/authenticated/link3',
+        text: "Link3",
+        icon: "glyphicon-wrench",
+        route: "/authenticated/link3",
         submenu: null
     }
 ];

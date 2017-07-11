@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { MenuService } from '../../menus/menu.service';
+import { MenuService } from "../../menus/menu.service";
 
 @Component({
-    selector: 'fw-content',
-    templateUrl: './content.component.html',
-    styleUrls: ['./content.component.css']
+    selector: "fw-content",
+    templateUrl: "./content.component.html",
+    styleUrls: ["./content.component.css"]
 })
 export class ContentComponent implements OnInit {
 

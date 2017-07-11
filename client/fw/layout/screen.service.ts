@@ -1,5 +1,5 @@
-import { HostListener, Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { HostListener, Injectable } from "@angular/core";
+import { Subject } from "rxjs/Subject";
 
 @Injectable()
 export class ScreenService {
@@ -15,7 +15,7 @@ export class ScreenService {
         try {
             this.screenWidth = window.innerWidth;
             this.screenHeight = window.innerHeight;
-            window.addEventListener('resize', (event) => this.onResize(event));
+            window.addEventListener("resize", (event) => this.onResize(event));
         } catch (e) {
             // we're going with default screen dimensions
         }

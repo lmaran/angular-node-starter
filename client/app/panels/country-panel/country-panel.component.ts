@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
-import { Country } from '../../view-models/country';
+import { Country } from "../../view-models/country";
 
 @Component({
-  selector: 'app-country-panel',
-  templateUrl: './country-panel.component.html',
-  styleUrls: ['./country-panel.component.css']
+  selector: "app-country-panel",
+  templateUrl: "./country-panel.component.html",
+  styleUrls: ["./country-panel.component.css"]
 })
 export class CountryPanelComponent implements OnInit {
 

@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
-import { AppDataService } from '../services/app-data.service';
-import { Country } from '../view-models/country';
+import { AppDataService } from "../services/app-data.service";
+import { Country } from "../view-models/country";
 
 @Component({
-  selector: 'app-country-list',
-  templateUrl: './country-list.component.html',
-  styleUrls: ['./country-list.component.css']
+  selector: "app-country-list",
+  templateUrl: "./country-list.component.html",
+  styleUrls: ["./country-list.component.css"]
 })
 export class CountryListComponent implements OnInit {
 
@@ -24,13 +24,13 @@ export class CountryListComponent implements OnInit {
       countries => {
         this.allCountries = countries;
 
-        this.count = this.route.snapshot.params['count'];
+        this.count = this.route.snapshot.params["count"];
         this.updateList();
       }
     );
 
     this.route.params.subscribe(params => {
-      this.count = params['count'];
+      this.count = params["count"];
       this.updateList();
      });
   }

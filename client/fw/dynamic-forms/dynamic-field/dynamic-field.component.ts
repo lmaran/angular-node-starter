@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, Input, OnInit } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 
-import { FieldDefinition } from '../field-definition';
+import { FieldDefinition } from "../field-definition";
 
 @Component({
-    selector: 'fw-dynamic-field',
-    templateUrl: './dynamic-field.component.html',
-    styleUrls: ['./dynamic-field.component.css']
+    selector: "fw-dynamic-field",
+    templateUrl: "./dynamic-field.component.html",
+    styleUrls: ["./dynamic-field.component.css"]
 })
 export class DynamicFieldComponent {
     @Input() field: FieldDefinition;

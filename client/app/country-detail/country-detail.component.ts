@@ -1,37 +1,37 @@
-import { Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import { ActivatedRoute, Params, Router} from '@angular/router';
+import { Component, OnChanges, OnInit, SimpleChanges} from "@angular/core";
+import { ActivatedRoute, Params, Router} from "@angular/router";
 
-import { AppDataService } from '../services/app-data.service';
-import { Country } from '../view-models/country';
-import { FieldDefinition } from '../../fw/dynamic-forms/field-definition';
+import { AppDataService } from "../services/app-data.service";
+import { Country } from "../view-models/country";
+import { FieldDefinition } from "../../fw/dynamic-forms/field-definition";
 
 @Component({
-  selector: 'app-country-detail',
-  templateUrl: './country-detail.component.html',
-  styleUrls: ['./country-detail.component.css']
+  selector: "app-country-detail",
+  templateUrl: "./country-detail.component.html",
+  styleUrls: ["./country-detail.component.css"]
 })
 export class CountryDetailComponent implements OnInit {
 
   country: Country;
   countryDefinition: Array<FieldDefinition> = [
     {
-      key: 'id',
-      type: 'number',
+      key: "id",
+      type: "number",
       isId: true,
-      label: 'Id',
+      label: "Id",
       required: true
     },
-    { key: 'name',
-      type: 'string',
+    { key: "name",
+      type: "string",
       isId: false,
-      label: 'Country Name',
+      label: "Country Name",
       required: true
     },
     {
-      key: 'epiIndex',
-      type: 'number',
+      key: "epiIndex",
+      type: "number",
       isId: false,
-      label: 'EPI Index',
+      label: "EPI Index",
       required: true
     }
   ];
@@ -46,18 +46,18 @@ export class CountryDetailComponent implements OnInit {
     country.id = 0;
     this.errorMessage = null;
     this.dataService.createCountry(country).subscribe(
-      c => this.router.navigate(['/authenticated/country-maint']),
-      err => this.errorMessage = 'Error creating country'
+      c => this.router.navigate(["/authenticated/country-maint"]),
+      err => this.errorMessage = "Error creating country"
       );
   }
 
   ngOnInit() {
-    this.operation = this.route.snapshot.params['operation'];
+    this.operation = this.route.snapshot.params["operation"];
 
-    if (this.operation === 'create') {
-      this.country = { id: 0, name: '', epiIndex: null };
+    if (this.operation === "create") {
+      this.country = { id: 0, name: "", epiIndex: null };
     } else {
-      const countryId = parseInt(this.route.snapshot.params['id'], 10);
+      const countryId = parseInt(this.route.snapshot.params["id"], 10);
       this.dataService.getCountry(countryId)
         .subscribe((country: Country) => this.country = country);
     }
@@ -66,8 +66,8 @@ export class CountryDetailComponent implements OnInit {
   updateCountry(country: Country) {
     this.errorMessage = null;
     this.dataService.updateCountry(country).subscribe(
-      c => this.router.navigate(['/authenticated/country-maint']),
-      err => this.errorMessage = 'Error updating country'
+      c => this.router.navigate(["/authenticated/country-maint"]),
+      err => this.errorMessage = "Error updating country"
       );
   }
 

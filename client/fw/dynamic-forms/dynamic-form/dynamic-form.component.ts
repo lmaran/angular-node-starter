@@ -1,14 +1,14 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Location } from '@angular/common';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Location } from "@angular/common";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { FieldDefinition } from '../field-definition';
+import { FieldDefinition } from "../field-definition";
 
 @Component({
-    selector: 'fw-dynamic-form',
-    templateUrl: './dynamic-form.component.html',
-    styleUrls: ['./dynamic-form.component.css']
+    selector: "fw-dynamic-form",
+    templateUrl: "./dynamic-form.component.html",
+    styleUrls: ["./dynamic-form.component.css"]
 })
 export class DynamicFormComponent implements OnChanges, OnInit {
 
@@ -39,8 +39,8 @@ export class DynamicFormComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes['errorMessage'].currentValue && this.status === 'waiting') {
-            this.status = '';
+        if (changes["errorMessage"].currentValue && this.status === "waiting") {
+            this.status = "";
         }
     }
 
@@ -48,7 +48,7 @@ export class DynamicFormComponent implements OnChanges, OnInit {
         this.clearForm();
 
         this.route.params.subscribe(params => {
-            this.operation = params['operation'];
+            this.operation = params["operation"];
             this.clearForm();
         });
     }
@@ -65,19 +65,19 @@ export class DynamicFormComponent implements OnChanges, OnInit {
     onCreate() {
         this.submitted = true;
         if (this.form.valid) {
-            this.status = 'waiting';
+            this.status = "waiting";
             this.create.emit(this.form.value);
         }
     }
 
     onEdit() {
-        this.router.navigate(['../', 'edit'], { relativeTo: this.route });
+        this.router.navigate(["../", "edit"], { relativeTo: this.route });
     }
 
     onSave() {
         this.submitted = true;
         if (this.form.valid) {
-            this.status = 'waiting';
+            this.status = "waiting";
             this.update.emit(this.form.value);
         }
     }
