@@ -12,10 +12,15 @@
 		"build:all": "run-p \"build:server\" \"build:client\"",
 		"build:server": "tsc -p ./server",
 		"build:client": "ng build --prod --output-path=dist/client",
+
+		"lint": "run-p \"lint:server\" \"client:client\"",
+		"lint:server": "tslint './server/**/*.ts' -c ./server/tslint.json",
+		"lint:client": "ng lint --fix",
+
+
 		"clean": "rimraf dist",
 		"reload": "echo \"Added automatically in order to trigger a browser reload in dev mode.\" > client/z-browserReload.txt",
 		"test": "ng test",
-		"lint": "ng lint",
 		"e2e": "ng e2e"
 	},
 	"private": true,
