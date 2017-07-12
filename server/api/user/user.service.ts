@@ -4,13 +4,13 @@ const collection = "users";
 
 const service = {
 
-    getAll: function (next) {
+    getAll: (next) => {
         // mongoService.getDb(function (err, db) {
         //     // if (err) { return next(err, null); }
 
         //     db.collection(collection).find().toArray(function(err2, docs) {
         //         next(null, docs);
-                next(null, [{name:"user1"}]);
+                next(null, [{name: "user1"}]);
         //     });
 
         // });

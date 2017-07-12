@@ -3,7 +3,7 @@ import userRoutes from "./api/user/user.routes";
 // import homeRoutes from "./api/home/home.routes";
 // import adminRoutes from "./api/admin/admin.routes";
 
-let allRoutes = function(app: Application) {
+const allRoutes = (app: Application) => {
     // API routes
     userRoutes(app);
 

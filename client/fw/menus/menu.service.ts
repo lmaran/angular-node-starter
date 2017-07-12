@@ -4,10 +4,10 @@ import { Subscription } from "rxjs/Subscription";
 import { ScreenService } from "../layout/screen.service";
 
 export interface MenuItem {
-    text: string,
-    icon: string,
-    route: string,
-    submenu: Array<MenuItem>
+    text: string;
+    icon: string;
+    route: string;
+    submenu: Array<MenuItem>;
 }
 
 @Injectable()

@@ -53,7 +53,7 @@ export class MenuItemComponent implements OnInit {
 
             // if not found, go deeper (recursively)
             if (this.hasAChildWithActiveRoute(nextItem)) { return true; }
-        };
+        }
 
         return false;
     }

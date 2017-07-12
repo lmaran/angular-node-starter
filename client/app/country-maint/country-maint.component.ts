@@ -19,7 +19,7 @@ export class CountryMaintComponent {
   constructor(private dataService: AppDataService,
               private router: Router) {
     dataService.getCountries().subscribe((data) => {
-      this.countries = data
+      this.countries = data;
     });
   }
 

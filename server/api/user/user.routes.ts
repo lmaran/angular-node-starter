@@ -1,11 +1,8 @@
-import userController from "./user.controller";
 import * as path from "path";
+import userController from "./user.controller";
 
-let routes = function(app) {
+const routes = (app) => {
     app.get("/api/user", userController.getAll);
-    // app.get("/api/user/:id", userController.getById);
 };
 
 export default routes;
-
-// export default controller;

@@ -1,11 +1,11 @@
-import allRoutes from "./routes";
-import config from "./config/environment";
 import * as express from "express";
 import * as path from "path";
+import config from "./config/environment";
+import allRoutes from "./routes";
 
 // const exphbs = require("express-handlebars");
 
-let initialize = function(app){
+const initialize = (app) => {
 
     app.set("views", config.root + "/server/views");
 
@@ -36,17 +36,16 @@ let initialize = function(app){
 
         //     // todo move this route
         // var file = path.join(__dirname, "/../client") + '/index.html';
-        // app.get('/authenticated/*', function(req, res) {res.sendFile(file);}); 
+        // app.get('/authenticated/*', function(req, res) {res.sendFile(file);});
 
         // api routes
         allRoutes(app);
 
         // client routes
-        app.get('/*', function (req, res) {
-            var file = path.join(__dirname, '../client/index.html');
+        app.get("/*", (req, res) => {
+            const file = path.join(__dirname, "../client/index.html");
             res.sendFile(file);
         });
-
 
         // app.use(favicon(path.join(config.root, "client", "favicon.ico")));
 
@@ -81,7 +80,7 @@ let initialize = function(app){
     }
 
     // // add a second static source for static files:
-    // // http://stackoverflow.com/questions/5973432/setting-up-two-different-static-directories-in-node-js-express-framework
+    // // https://stackoverflow.com/a/5976580
     // app.use("/public", express.static(path.join(config.root, "server/public")));
 
     // // for js files used by some views

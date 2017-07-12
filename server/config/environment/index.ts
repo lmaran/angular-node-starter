@@ -1,15 +1,15 @@
 // process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
-import * as path from "path";
 import * as _ from "lodash";
+import * as path from "path";
 
 import developmentConfig from "./development";
 // import stagingConfig from "./staging";
 // import productionConfig from "./production";
 // import testConfig from "./test";
 
-let envConfig = {
-    development: developmentConfig
+const envConfig = {
+    development: developmentConfig,
     // staging: stagingConfig,
     // production: productionConfig,
     // test: testConfig
@@ -30,20 +30,21 @@ interface IConfig {
     externalUrl: string;
 }
 
-let common = <IConfig> {
+const common = {
     env: process.env.NODE_ENV || "development",
-    port: process.env.PORT || 1410,
-    root: path.normalize(__dirname + "/../../.."), // 3 folders back from the current folder
     mongo: {
         options: {
             db: {
-                // safe: true // in Mongo 2.0 this option is "true" by default and is equals to {w:1} - http://stackoverflow.com/a/14801527
+                // safe: true // in Mongo 2.0 this option is "true" by default and is equals to {w:1}
+                // details: http://stackoverflow.com/a/14801527
             }
         }
     },
-
+    port: process.env.PORT || 1410,
     rollbarToken: "c40dd41c292340419923230eed1d0d61",
-};
+    root: path.normalize(__dirname + "/../../..") // 3 folders back from the current folder
+
+} as IConfig;
 
 const config = _.merge(
     common,

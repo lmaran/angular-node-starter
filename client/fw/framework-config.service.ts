@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
 
 export interface IconFiles {
-    imageFile: string,
-    alt: string,
-    link: string
+    imageFile: string;
+    alt: string;
+    link: string;
 }
 
 export interface FrameworkConfigSettings {
-    showLanguageSelector?: boolean,
-    showUserControls?: boolean,
-    showStatusBar?: boolean,
-    showStatusBarBreakpoint?: number,
-    socialIcons?: Array<IconFiles>
+    showLanguageSelector?: boolean;
+    showUserControls?: boolean;
+    showStatusBar?: boolean;
+    showStatusBarBreakpoint?: number;
+    socialIcons?: Array<IconFiles>;
 }
 
 @Injectable()

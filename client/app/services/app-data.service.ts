@@ -26,7 +26,7 @@ export class AppDataService {
   createCountry(vm: Country): Observable<any> {
     // return Observable.of({}).delay(2000).flatMap(x=>Observable.throw('Unable to create country'));
     let id = 0;
-    this.countries.forEach(c => { if (c.id >= id) {id = c.id + 1 }});
+    this.countries.forEach(c => { if (c.id >= id) {id = c.id + 1; }});
     vm.id = id;
     this.countries.push(vm);
     return Observable.of(vm);
