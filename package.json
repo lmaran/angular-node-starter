@@ -12,14 +12,11 @@
 		"build:all": "run-p \"build:server\" \"build:client\"",
 		"build:server": "tsc -p ./server",
 		"build:client": "ng build --prod --output-path=dist/client",
-
 		"lint": "run-p \"lint:server\" \"lint:client\"",
 		"lint:server": "tslint './server/**/*.ts' -c ./server/tslint.json",
 		"lint:client": "ng lint --type-check",
 		"lint:server:fix": "tslint --fix './server/**/*.ts' -c ./server/tslint.json",
 		"lint:client:fix": "ng lint --fix",
-
-
 		"clean": "rimraf dist",
 		"reload": "echo \"Added automatically in order to trigger a browser reload in dev mode.\" > client/z-browserReload.txt",
 		"test": "ng test",
@@ -44,7 +41,7 @@
 		"zone.js": "^0.8.4"
 	},
 	"devDependencies": {
-		"@angular/cli": "1.2.0",
+		"@angular/cli": "^1.2.1",
 		"@angular/compiler-cli": "^4.0.0",
 		"@angular/language-service": "^4.0.0",
 		"@types/jasmine": "^2.5.53",
@@ -63,8 +60,8 @@
 		"npm-run-all": "^4.0.2",
 		"protractor": "~5.1.2",
 		"rimraf": "^2.6.1",
-		"ts-node": "~3.0.4",
-		"tslint": "~5.3.2",
+		"ts-node": "^3.2.0",
+		"tslint": "^5.5.0",
 		"typescript": "^2.4.1"
 	}
 }

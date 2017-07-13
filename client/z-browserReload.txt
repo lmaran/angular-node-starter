@@ -1,1 +1,1 @@
-Added automatically in order to trigger a browser reload.
+"Added automatically in order to trigger a browser reload in dev mode." 
